@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tree-sitter-devicetree-viewer/static/css/main.343f3b7d.css",
+    "main.js": "/tree-sitter-devicetree-viewer/static/js/main.97cf2d83.js",
+    "static/js/787.ed39c2c7.chunk.js": "/tree-sitter-devicetree-viewer/static/js/787.ed39c2c7.chunk.js",
+    "index.html": "/tree-sitter-devicetree-viewer/index.html",
+    "main.343f3b7d.css.map": "/tree-sitter-devicetree-viewer/static/css/main.343f3b7d.css.map",
+    "main.97cf2d83.js.map": "/tree-sitter-devicetree-viewer/static/js/main.97cf2d83.js.map",
+    "787.ed39c2c7.chunk.js.map": "/tree-sitter-devicetree-viewer/static/js/787.ed39c2c7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.343f3b7d.css",
+    "static/js/main.97cf2d83.js"
+  ]
+}
