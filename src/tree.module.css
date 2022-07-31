@@ -1,0 +1,24 @@
+.treeContainer {
+  font-family: monospace;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #282c34;
+  color: white;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.listContainer ul {
+  padding-left: 1.25em;
+}
+
+.listContainer li label {
+  padding: 3px;
+  border-radius: 2px;
+}
+.listContainer li label:hover {
+  background-color: rgba(255, 200, 0, 0.35);
+}
+.listContainer li label.selected {
+  background-color: rgba(255, 255, 0, 0.35);
+}
