@@ -1,16 +1,29 @@
+import compact from 'lodash/compact'
 import styles from './tree.module.css'
 
 function Node ({ node, selectedId, onSelect }) {
+  const nodeChildren = node.namedChildren
+  const isNamed = node.isNamed()
+  const hasErrors = node.hasError()
+  const field = node.tree.language.fields.find(field => (
+    node.parent?.childForFieldName(field)?.id === node.id && field
+  ))
+
   return (
     <div className={styles.listContainer}>
       <label
-        className={selectedId === node.id ? styles.selected : ''}
+        className={compact([
+          selectedId === node.id && styles.selected,
+          isNamed && styles.named,
+          hasErrors && styles.error
+        ]).join(' ')}
         onClick={() => onSelect(node)}
       >
-        {node.type}
+        {field && <span className={styles.field}>{field}: </span>} 
+        {isNamed ? node.type : node.text}
       </label>
       <ul>
-        {node.namedChildren.map((childNode, i) => (
+        {nodeChildren.map((childNode, i) => (
           <li key={i}>
             <Node node={childNode} selectedId={selectedId} onSelect={onSelect} />
           </li>

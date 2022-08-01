@@ -9,16 +9,25 @@
 }
 
 .listContainer ul {
+  margin-top: 0;
   padding-left: 1.25em;
 }
 
-.listContainer li label {
-  padding: 3px;
+.listContainer label {
+  cursor: pointer;
+  display: inline-block;
+  width: max-content;
+  padding: 2px 4px;
   border-radius: 2px;
 }
-.listContainer li label:hover {
+.listContainer label:hover {
   background-color: rgba(255, 200, 0, 0.35);
 }
-.listContainer li label.selected {
+.listContainer label.selected {
   background-color: rgba(255, 255, 0, 0.35);
 }
+
+label { color: gray; }
+label.named { color: white; }
+label.error { color: tomato; }
+.field { color:lightskyblue; }
