@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/tree-sitter-devicetree-viewer/static/css/main.343f3b7d.css",
-    "main.js": "/tree-sitter-devicetree-viewer/static/js/main.97cf2d83.js",
-    "static/js/787.ed39c2c7.chunk.js": "/tree-sitter-devicetree-viewer/static/js/787.ed39c2c7.chunk.js",
-    "index.html": "/tree-sitter-devicetree-viewer/index.html",
-    "main.343f3b7d.css.map": "/tree-sitter-devicetree-viewer/static/css/main.343f3b7d.css.map",
-    "main.97cf2d83.js.map": "/tree-sitter-devicetree-viewer/static/js/main.97cf2d83.js.map",
-    "787.ed39c2c7.chunk.js.map": "/tree-sitter-devicetree-viewer/static/js/787.ed39c2c7.chunk.js.map"
+    "main.css": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/css/main.df03f6dd.css",
+    "main.js": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/js/main.ca489155.js",
+    "static/js/787.ed39c2c7.chunk.js": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/js/787.ed39c2c7.chunk.js",
+    "index.html": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/index.html",
+    "main.df03f6dd.css.map": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/css/main.df03f6dd.css.map",
+    "main.ca489155.js.map": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/js/main.ca489155.js.map",
+    "787.ed39c2c7.chunk.js.map": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/js/787.ed39c2c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.343f3b7d.css",
-    "static/js/main.97cf2d83.js"
+    "static/css/main.df03f6dd.css",
+    "static/js/main.ca489155.js"
   ]
 }
