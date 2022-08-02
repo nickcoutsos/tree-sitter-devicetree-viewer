@@ -1,15 +1,23 @@
 {
   "files": {
-    "main.css": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/css/main.df03f6dd.css",
-    "main.js": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/js/main.ca489155.js",
+    "main.css": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/css/main.bc6d19ff.css",
+    "main.js": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/js/main.8e43dd6d.js",
     "static/js/787.ed39c2c7.chunk.js": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/js/787.ed39c2c7.chunk.js",
+    "static/media/fa-solid-900.ttf": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/media/fa-solid-900.422cfe2813b03d900c10.ttf",
+    "static/media/fa-brands-400.ttf": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/media/fa-brands-400.aff1938a5c48584fa92b.ttf",
+    "static/media/fa-solid-900.woff2": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/media/fa-solid-900.64d495f582d4a1590a6c.woff2",
+    "static/media/fa-brands-400.woff2": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/media/fa-brands-400.a914b121110f8b6e01c9.woff2",
+    "static/media/fa-regular-400.ttf": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/media/fa-regular-400.625dca125b58060788da.ttf",
+    "static/media/fa-regular-400.woff2": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/media/fa-regular-400.47074dec01b64a5db2c4.woff2",
+    "static/media/fa-v4compatibility.ttf": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/media/fa-v4compatibility.ea8535110e0c42fd0046.ttf",
+    "static/media/fa-v4compatibility.woff2": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/media/fa-v4compatibility.2ec4574b00d1d21ed0a3.woff2",
     "index.html": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/index.html",
-    "main.df03f6dd.css.map": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/css/main.df03f6dd.css.map",
-    "main.ca489155.js.map": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/js/main.ca489155.js.map",
+    "main.bc6d19ff.css.map": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/css/main.bc6d19ff.css.map",
+    "main.8e43dd6d.js.map": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/js/main.8e43dd6d.js.map",
     "787.ed39c2c7.chunk.js.map": "https://nickcoutsos.github.io/tree-sitter-devicetree-viewer/static/js/787.ed39c2c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.df03f6dd.css",
-    "static/js/main.ca489155.js"
+    "static/css/main.bc6d19ff.css",
+    "static/js/main.8e43dd6d.js"
   ]
 }
