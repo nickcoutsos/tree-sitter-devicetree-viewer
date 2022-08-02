@@ -8,15 +8,18 @@
   box-sizing: border-box;
 }
 
+.listContainer {
+  width: max-content;
+}
 .listContainer ul {
   margin-top: 0;
-  padding-left: 1.25em;
+  padding-left: 1em;
+  list-style-type: none;
 }
 
 .listContainer label {
   cursor: pointer;
   display: inline-block;
-  width: max-content;
   padding: 2px 4px;
   border-radius: 2px;
 }
@@ -31,3 +34,20 @@ label { color: gray; }
 label.named { color: white; }
 label.error { color: tomato; }
 .field { color:lightskyblue; }
+
+.collapser, .collapserPlaceholder {
+  display: inline-block;
+  width: 6px;
+  height: 10px;
+  margin-right: 4px;
+}
+
+.collapser {
+  font-size: 10px;
+  cursor: pointer;
+}
+.collapser[data-is-collapsed="true"] {
+  transform-origin: center;
+  transform: rotateZ(-90deg);
+  transition: transform 150ms linear;
+}

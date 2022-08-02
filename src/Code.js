@@ -11,7 +11,7 @@ function Code ({ text, onChange, highlightNode }) {
 
   useEffect(() => {
     const view = doc.current?.view
-    if (!view) {
+    if (!view || !highlightNode) {
       return
     }
 

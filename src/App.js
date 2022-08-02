@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import sampleSource from './sample'
 
+import '@fortawesome/fontawesome-free/css/all.css'
 import './App.css'
 import Code from './Code'
 import Tree from './Tree'
