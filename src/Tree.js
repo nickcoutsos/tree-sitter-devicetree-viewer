@@ -1,6 +1,8 @@
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import compact from 'lodash/compact'
 import styles from './tree.module.css'
+
+const DEFAULT_NODE_VISIBILITY = localStorage.getItem('nodeVisibility') || 'named'
 
 function mapChildFields (node) {
   const map = {}
@@ -13,9 +15,8 @@ function mapChildFields (node) {
   cursor.gotoFirstChild()
 
   do {
-    const isNamed = cursor.currentNode().isNamed()
     const field = cursor.currentFieldName()
-    if (isNamed && field) {
+    if (field) {
       map[cursor.nodeId] = field
     }
   } while (cursor.gotoNextSibling())
@@ -23,14 +24,25 @@ function mapChildFields (node) {
   return map
 }
 
-function Node ({ node, field, selectedId, onSelect }) {
+function Node ({ node, field, selectedId, nodeVisibility, onSelect }) {
   const [isCollapsed, setCollapsed] = useState(false)
-  const nodeChildren = node.namedChildren
+  const nodeChildren = node.children
   const isSelected = node.id === selectedId
   const isNamed = node.isNamed()
   const hasErrors = node.hasError()
 
   const childFieldMap = useMemo(() => mapChildFields(node), [node])
+  const showChild = useCallback(childNode => {
+    switch (nodeVisibility) {
+      case 'named':
+        return childNode.isNamed()
+      case 'field':
+        return childNode.isNamed() || childFieldMap[childNode.id]
+      case 'all':
+      default:
+        return true
+    }
+  }, [childFieldMap, nodeVisibility])
 
   return (
     <div className={styles.listContainer}>
@@ -53,12 +65,13 @@ function Node ({ node, field, selectedId, onSelect }) {
         {isNamed ? node.type : node.text}
       </label>
       <ul>
-        {!isCollapsed && nodeChildren.map((childNode, i) => (
+        {!isCollapsed && nodeChildren.map((childNode, i) => showChild(childNode) && (
           <li key={i}>
             <Node
               node={childNode}
               field={childFieldMap[childNode.id]}
               selectedId={selectedId}
+              nodeVisibility={nodeVisibility}
               onSelect={onSelect}
             />
           </li>
@@ -69,15 +82,45 @@ function Node ({ node, field, selectedId, onSelect }) {
 }
 
 function Tree ({ tree, selectedNode, onSelect }) {
+  const [nodeVisibility, setNodeVisibility] = useState(DEFAULT_NODE_VISIBILITY)
+  const handleVisibilityChange = useCallback(nodeVisibility => {
+    localStorage.setItem('nodeVisibility', nodeVisibility)
+    setNodeVisibility(nodeVisibility)
+  }, [setNodeVisibility])
+
   return (
     <div className={styles.treeContainer}>
+      <VisibilitySelector
+        value={nodeVisibility}
+        onUpdate={handleVisibilityChange}
+      />
       <Node
         node={tree.rootNode}
         field={null}
         selectedId={selectedNode?.id}
+        nodeVisibility={nodeVisibility}
         onSelect={onSelect}
       />
     </div>
+  )
+}
+
+function VisibilitySelector ({ value, onUpdate }) {
+  const options = {
+    all: 'All nodes',
+    named: 'Named nodes only',
+    field: 'Nodes with fields'
+  }
+
+  return (
+    <label>
+      Show:&nbsp;
+      <select value={value} onChange={e => onUpdate(e.target.value)}>
+        {Object.keys(options).map(key => (
+          <option key={key} value={key}>{options[key]}</option>
+        ))}
+      </select>
+    </label>
   )
 }
 

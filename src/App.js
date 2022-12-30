@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import sampleSource from './sample'
 
 import '@fortawesome/fontawesome-free/css/all.css'
@@ -7,6 +7,8 @@ import Code from './Code'
 import Tree from './Tree'
 
 let _parser
+
+const DEFAULT_BUILD = localStorage.getItem('languageBuildId') || 'main'
 
 const languageBuilds = {
   main: {
@@ -71,7 +73,7 @@ function BuildSelector({ value, onChange }) {
 
 
 function App() {
-  const [buildId, setBuildId] = useState('main')
+  const [buildId, setBuildId] = useState(DEFAULT_BUILD)
   const [sample, setSample] = useState(sampleSource)
   const [tree, setTree] = useState(null)
   const [selectedNode, setSelectedNode] = useState(null)
@@ -83,9 +85,14 @@ function App() {
     })()
   }, [buildId, sample, setTree])
 
+  const handleBuildChange = useCallback(buildId => {
+    localStorage.setItem('languageBuildId', buildId)
+    setBuildId(buildId)
+  }, [setBuildId])
+
   return (
     <>
-      <BuildSelector value={buildId} onChange={setBuildId} />
+      <BuildSelector value={buildId} onChange={handleBuildChange} />
       {tree && (
         <div style={{ flexBasis: 'fit-content' }}>
           <Tree
