@@ -5,6 +5,7 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import './App.css'
 import Code from './Code'
 import Tree from './Tree'
+import { formatNode } from './formatting'
 
 let _parser
 
@@ -85,6 +86,10 @@ function App() {
     })()
   }, [buildId, sample, setTree])
 
+  const formatCode = useCallback(() => {
+    setSample(formatNode(tree.rootNode).join('\n'))
+  }, [tree, setSample])
+
   const handleBuildChange = useCallback(buildId => {
     localStorage.setItem('languageBuildId', buildId)
     setBuildId(buildId)
@@ -92,7 +97,18 @@ function App() {
 
   return (
     <>
-      <BuildSelector value={buildId} onChange={handleBuildChange} />
+      {/* <BuildSelector value={buildId} onChange={handleBuildChange} /> */}
+      <button
+        onClick={formatCode}
+        style={{
+          position: 'absolute',
+          top: '10px',
+          right: '20px',
+          zIndex: '10'
+        }}
+      >
+        Format
+      </button>
       {tree && (
         <div style={{ flexBasis: 'fit-content' }}>
           <Tree
