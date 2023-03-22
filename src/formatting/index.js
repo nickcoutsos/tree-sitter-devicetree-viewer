@@ -1,9 +1,9 @@
-const {
+import {
   removeStartingWhitespace,
   removeTrailingWhitespace,
   reindent,
   dedent
-} = require('./string-utils')
+} from './string-utils'
 
 const DEFAULT_INDENT = '    '
 const DEFAULT_MULTILINE_INTEGER_CELLS_INDENT = 'keep'
@@ -36,7 +36,7 @@ function getNodeIndentation (node, tab) {
   return tab.repeat(getNodeDepth(node))
 }
 
-function getModelineConfiguration (tree) {
+export function getModelineConfiguration (tree) {
   return tree.rootNode.namedChildren.reduce((config, node) => {
     if (node.type === 'comment') {
       const contents = node.text.startsWith('//')
@@ -136,7 +136,7 @@ function shouldIncludeBlank (nodeA, nodeB) {
  * @param {SyntaxNode} node any node in the devicetree
  * @returns {String} the newly-formatted text for the syntax node
  */
-function formatNode (node, options = {}) {
+export function formatNode (node, options = {}) {
   const { indent = DEFAULT_INDENT } = options
 
   if (node.type === 'labeled_item') {
@@ -264,12 +264,4 @@ function formatPropertyNode (node, options = {}) {
         return [line, suffix].join('')
       })
   ]
-}
-
-module.exports = {
-  formatNode,
-  getModelineConfiguration,
-  getNodeDepth,
-  isInlineComment,
-  shouldIncludeBlank
 }
