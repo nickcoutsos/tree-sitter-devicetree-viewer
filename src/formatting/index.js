@@ -83,8 +83,8 @@ function getNodeChildrenByFieldName (node, fieldName) {
 }
 
 function getNodeLabels (node) {
-  const labelNodes = getNodeChildrenByFieldName(node, 'label')
-  return labelNodes.map(node => node)
+  const labelNodes = getNodeChildrenByFieldName(node.parent, 'label')
+  return labelNodes.map(node => node.text)
 }
 
 /**
